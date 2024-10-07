@@ -2,6 +2,7 @@ const loginOptionsCancelContainer = document.getElementById('loginOptionCancelCo
 const loginOptionMicrosoft = document.getElementById('loginOptionMicrosoft')
 const loginOptionMojang = document.getElementById('loginOptionMojang')
 const loginOptionsCancelButton = document.getElementById('loginOptionCancelButton')
+const loginOptionPirata = document.getElementById('loginOptionPirata')
 
 let loginOptionsCancellable = false
 
@@ -10,8 +11,8 @@ let loginOptionsViewOnLoginCancel
 let loginOptionsViewOnCancel
 let loginOptionsViewCancelHandler
 
-function loginOptionsCancelEnabled(val){
-    if(val){
+function loginOptionsCancelEnabled(val) {
+    if (val) {
         $(loginOptionsCancelContainer).show()
     } else {
         $(loginOptionsCancelContainer).hide()
@@ -35,6 +36,9 @@ loginOptionMojang.onclick = (e) => {
         loginCancelEnabled(true)
     })
 }
+loginOptionPirata.onclick = (e) => {
+
+}
 
 loginOptionsCancelButton.onclick = (e) => {
     switchView(getCurrentView(), loginOptionsViewOnCancel, 500, 500, () => {
@@ -42,7 +46,7 @@ loginOptionsCancelButton.onclick = (e) => {
         // No cleanup needed for Microsoft.
         loginUsername.value = ''
         loginPassword.value = ''
-        if(loginOptionsViewCancelHandler != null){
+        if (loginOptionsViewCancelHandler != null) {
             loginOptionsViewCancelHandler()
             loginOptionsViewCancelHandler = null
         }
